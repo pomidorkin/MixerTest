@@ -6,13 +6,15 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioMixer mixer;
+    [SerializeField] AudioSource audioSourceMuted;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AnimationClip animationClip;
     // Start is called before the first frame update
     void Start()
     {
-        //audioSource.volume = 1;
         mixer.SetFloat("MyExposedParam", -80.0f);
-        //audioSource.Play();
+        audioSource.PlayDelayed(animationClip.length);
+        Debug.Log(animationClip.length);
     }
 
     // Update is called once per frame
@@ -23,6 +25,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource GetAudioSource()
     {
-        return audioSource;
+        return audioSourceMuted;
     }
 }
