@@ -14,7 +14,6 @@ public class AudioManager : MonoBehaviour
     {
         mixer.SetFloat("MyExposedParam", -80.0f);
         audioSource.PlayDelayed(animationClip.length);
-        Debug.Log(animationClip.length);
     }
 
     // Update is called once per frame

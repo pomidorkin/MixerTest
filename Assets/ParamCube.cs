@@ -7,26 +7,21 @@ public class ParamCube : MonoBehaviour
     public int band;
     public float startScale, scaleMultiplier;
     [SerializeField] bool useBuffer = true;
+ 
     void Update()
     {
-       /* if (useBuffer)
+        if (useBuffer)
         {
             transform.localScale = new Vector3(transform.localScale.x,
             (AudioPeer.bandBuffer[band] * scaleMultiplier) + startScale,
             transform.localScale.z);
+
         }
         if (!useBuffer)
         {
             transform.localScale = new Vector3(transform.localScale.x,
             (AudioPeer.frequencyBands[band] * scaleMultiplier) + startScale,
             transform.localScale.z);
-        }*/
-
-        // My Code
-        if (AudioPeer.bandBuffer[band] > 1.6f)
-        {
-            //gameObject.GetComponent<Animator>().Play("Jump");
-            gameObject.GetComponent<Animator>().SetTrigger("CubeJumpTrigger");
         }
 
     }
